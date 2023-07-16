@@ -14,6 +14,7 @@ export default function Episodes() {
           objectFit="cover"
           objectPosition="center"
           layout="fill"
+          loading="lazy"
         />
         <div className=" relative z-[10]">
           <AboutSeason />

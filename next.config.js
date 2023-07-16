@@ -5,9 +5,9 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
-  // images: {
-  //   domains: ["m.media-amazon.com"],
-  // },
+  images: {
+    domains: ["m.media-amazon.com"],
+  },
 };
 
 module.exports = nextConfig;

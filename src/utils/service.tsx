@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import Toast from "@/components/widget/toast";
-import { Episode, MovieDetail } from "@/types/types";
+import { Episode, EpisodeResponseHttpRequest, MovieDetail } from "@/types/types";
 import { API_KEY, API_URL } from "@/utils/config";
 import {
   PARAMETER_EPISODE,
@@ -34,25 +34,28 @@ export async function getEpisodes(
   );
   try {
 
-    const episodes: Episode[] = [];
+    let episodes: Episode[] = [];
     const response = await axios.get(url);
-    const episodeDataList = response.data.Episodes;
+    const episodeDataList: EpisodeResponseHttpRequest[] = response.data.Episodes;
     if (response.data.Response === "True") {
 
-      for (const episodeData of episodeDataList) {
+      const moviePromises = episodeDataList.map((episodeData) =>
+        getEpisodePlot(movieId, season, episodeData.Episode).then((plot) => {
 
-        const plot = await getEpisodePlot(movieId, season, episodeData.Episode);
-        const movie: Episode = {
-          id: episodeData.Episode,
-          title: episodeData.Title,
-          rate: episodeData.imdbRating,
-          released: episodeData.Released,
-          season: season,
-          plot: plot,
-        };
-        episodes.push(movie);
+          const movie: Episode = {
+            id: episodeData.Episode,
+            title: episodeData.Title,
+            rate: episodeData.imdbRating,
+            released: episodeData.Released,
+            season: season,
+            plot: plot,
+          };
+          return movie;
 
-      }
+        }),
+      );
+      const movies = await Promise.all(moviePromises);
+      episodes = movies;
 
     } else {
 
@@ -109,9 +112,6 @@ async function geMovieTitleList(): Promise<string[]> {
 
   return [
     "Insecure",
-    "Batman: The Animated Series",
-    "A Series of Unfortunate Events",
-    "Scream: The TV Series",
   ];
 
 }

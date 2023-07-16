@@ -1,3 +1,10 @@
+export interface EpisodeResponseHttpRequest {
+  Title: string;
+  Released: string;
+  Episode: string;
+  imdbRating: string;
+}
+
 export interface Episode {
   title: string;
   released: string;

@@ -43,11 +43,11 @@ const AboutSeason = () => {
     <>
       {movie && (
         <div>
-          <div className="h-[65vh] text-white flex flex-col justify-center p-20 ">
+          <div className="h-[65vh] text-white flex flex-col justify-center p-4 md:p-10 lg:p-20 ">
             <Description movie={movie} />
           </div>
 
-          <div className="pl-16">
+          <div className=" pl-4 md:pl-10 lg:pl-16">
             {renderEpisodeList && <Slider list={renderEpisodeList} />}
           </div>
         </div>

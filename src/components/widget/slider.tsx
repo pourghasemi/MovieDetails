@@ -118,7 +118,7 @@ const Slider = ({ list }: { list: React.JSX.Element[] }) => {
               {list.map((item, index) => (
                 <div
                   key={index}
-                  className="relative  w-[85%] shrink-0 snap-start snap-always rounded-xl  md:w-[25%]"
+                  className="relative  w-[97%] shrink-0 snap-start snap-always rounded-xl md:w-[50%] lg:w-[25%]"
                 >
                   {item}
                 </div>
@@ -135,6 +135,7 @@ const Slider = ({ list }: { list: React.JSX.Element[] }) => {
                 className="float-left"
                 aria-label="Next Button"
                 title="Next Button"
+                loading="lazy"
               />
             </button>
             <button className="next-btn  p-2">
@@ -146,6 +147,7 @@ const Slider = ({ list }: { list: React.JSX.Element[] }) => {
                 className="float-left"
                 aria-label="previous Button"
                 title="previous Button"
+                loading="lazy"
               />
             </button>
           </div>

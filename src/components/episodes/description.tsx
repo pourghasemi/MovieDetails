@@ -14,11 +14,11 @@ const Description = ({ movie }: PropsType) => {
     <>
       {movie && (
         <>
-          <h3 className="text-sm md:text-2xl font-thin">Season {Season}</h3>
-          <h1 className="text-[36px] md:text-[48px] lg:text-[54px] xl:text-[74px]  font-bold md:leading-[52px] lg:leading-[60px] xl:leading-[80px] ">
+          <h3 className="text-lg md:text-xl lg:text-2xl font-thin">Season {Season}</h3>
+          <h1 className="text-[2.25rem]  font-bold md:leading-[3.25rem]  ">
             {movie?.title}
           </h1>
-          <p className="max-w-[510px] font-thin text-base md:text-2xl ">
+          <p className="max-w-[510px] font-thin text-lg md:text-xl lg:text-2xl ">
             {movie?.plot}
           </p>
         </>

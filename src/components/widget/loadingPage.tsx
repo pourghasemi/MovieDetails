@@ -3,11 +3,11 @@ import React from "react";
 const LoadingPage = () => (
   <div
     role="status"
-    className="flex justify-center items-center opacity-50 bg-black fixed -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2 w-[100vw] h-[100vh]"
+    className="flex justify-center items-center opacity-90 bg-white  z-10 fixed -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2 w-[100vw] h-[100vh]"
   >
     <svg
       aria-hidden="true"
-      className="w-20 h-20 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+      className="w-20 h-20 mr-2 text-gray-200 animate-spin dark:text-gray-400 fill-gray-900"
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

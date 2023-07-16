@@ -41,10 +41,11 @@ const EpisodeDetail = () => {
               objectFit="cover"
               objectPosition="center"
               layout="fill"
+              loading="lazy"
             />
           </div>
-          <div className="flex-auto divide-y divide-[#eaeae] text-lg">
-            <div className=" flex justify-between items-center px-6 py-12">
+          <div className="flex-auto divide-y divide-[#eaeae] text-base lg:text-lg">
+            <div className=" flex justify-between items-center flex-row px-6 py-12">
               <div className="flex-1">
                 <span data-testid="episodeNumber">Episode {episode.id} - </span>
                 <span data-testid="episodeRelease">{episode?.released}</span>
@@ -55,7 +56,8 @@ const EpisodeDetail = () => {
                   width="27.98"
                   height="26.62"
                   alt=""
-                  className="float-left mr-4"
+                  className="float-left mr-1 lg:mr-4"
+                  loading="lazy"
                 />
                 <b>{Number(episode?.rate) || "-"}</b> / 10{" "}
               </span>
@@ -63,11 +65,11 @@ const EpisodeDetail = () => {
             <div className="px-6 py-12">
               <h3
                 data-testid="episodeTitle"
-                className="text-2xl mb-2 font-bold"
+                className="text-xl lg:text-2xl mb-2 font-bold"
               >
                 {episode?.title}
               </h3>
-              <p data-testid="episodePlot" className="text-lg ">
+              <p data-testid="episodePlot" className="text-lg md:text-base lg:text-lg ">
                 {episode.plot}
               </p>
             </div>

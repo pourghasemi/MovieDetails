@@ -37,7 +37,7 @@ const Card = ({ data, handelClick: changeEpisode }: PropsType) => {
                 style={{ objectFit: "cover" }}
               />
             </div>
-            <span className=" absolute top-0 left-0 bg-white w-[30px] h-[30px] text-black text-center leading-[30px] text-base">
+            <span className=" absolute top-0 left-0 bg-white w-[30px] h-[30px] text-black text-center leading-[1.8rem] text-base">
               <b>{data.id}</b>
             </span>
           </div>
