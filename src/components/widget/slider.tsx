@@ -1,4 +1,3 @@
-//@ts-nocheck
 import React, { useRef } from "react";
 import Image from "next/image";
 
@@ -7,25 +6,33 @@ import TailRight from "@/assets/images/icons/tailRight.svg";
 
 const Slider = ({ list }: { list: React.JSX.Element[] }) => {
 
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
 
   // Next
   function handelNextBtn() {
 
-    const slides = containerRef.current.children;
-    containerRef.current.scrollBy({ left: slides[0].offsetWidth, behavior: "smooth" });
+    if (containerRef?.current) {
+
+      const slides = containerRef.current.children;
+      containerRef.current.scrollBy({ left: (slides[0] as HTMLElement).offsetWidth, behavior: "smooth" });
+
+    }
 
   }
 
   // Previous
   function handelPrevBtn() {
 
-    const slides = containerRef.current.children;
-    containerRef.current.scrollBy({
-      left: -slides[0].offsetWidth,
-      behavior: "smooth",
-    });
+    if (containerRef?.current) {
+
+      const slides = containerRef.current.children;
+      containerRef.current.scrollBy({
+        left: -(slides[0] as HTMLElement).offsetWidth,
+        behavior: "smooth",
+      });
+
+    }
 
   };
 
