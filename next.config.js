@@ -8,6 +8,7 @@ const nextConfig = {
   images: {
     domains: ["m.media-amazon.com"],
   },
+  // output: "export",
 };
 
 module.exports = nextConfig;

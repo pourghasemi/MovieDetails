@@ -8,9 +8,11 @@ import { getMovieUrl } from "@/utils/service";;
 
 import HeadTags from "@/components/widget/headTags";
 import LoadingPage from "@/components/widget/loadingPage";
+
 export default function Home(): ReactElement {
 
   const [movies, setMovies] = useState<MovieDetail[]>([]);
+
   useEffect(() => {
 
     getMovies();
