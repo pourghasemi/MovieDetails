@@ -43,7 +43,7 @@ const Card = ({ data, handelClick: changeEpisode }: PropsType) => {
           </div>
           <div className="my-4 tracking-widest	">
             <h2 className="mb-2 text-base font-thin ">{data.title}</h2>
-            <p className="mb-4 text-[13px]  opacity-80	">{data.description}</p>
+            <p className="mb-4 text-[13px] font-thin  opacity-80	">{data.description}</p>
           </div>
         </div>
       )}
