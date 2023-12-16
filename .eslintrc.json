@@ -24,17 +24,17 @@
       }
     }],
     "object-curly-spacing": ["error", "always"],
-    "array-bracket-spacing": ["error", "never"],
+    "array-bracket-spacing": ["error", "always"],
     "keyword-spacing": ["error", {
-      "before": true,
-      "after": true
+      "before": false,
+      "after": false
     }],
     "no-unreachable": "error",
     "no-throw-literal": "error",
     "arrow-body-style": ["error", "as-needed"],
     "react/self-closing-comp": ["error", { "component": true, "html": true }],
     "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
-    "padded-blocks": ["error", "always"]
+    "padded-blocks": ["error", "never"]
   },
   "overrides": [
     // Override "simple-import-sort" config
